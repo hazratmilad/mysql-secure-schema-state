@@ -15,4 +15,4 @@ MySQL schemas using `mysqldump`, while protecting MariaDB users from unsupported
 ## 📦 Installation
 
 ```bash
-composer require milad/mysql-secure-schema-state
+composer require hazratmilad/mysql-secure-schema-state
