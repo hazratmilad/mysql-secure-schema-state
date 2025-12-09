@@ -1,0 +1,34 @@
+{
+  "name": "hazratmilad/mysql-secure-schema-state",
+  "description": "SSL-capable, MySQL-enhanced schema dump state replacement for Laravel with MariaDB-safe fallbacks.",
+  "keywords": ["laravel", "mysql", "mariadb", "schema", "mysqldump", "ssl"],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Milad",
+      "email": "undresspr.spy@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "laravel/framework": "^11|^12"
+  },
+  "autoload": {
+    "psr-4": {
+      "Milad\\MySqlSecureSchemaState\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Milad\\MySqlSecureSchemaState\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Milad\\MySqlSecureSchemaState\\MySqlSecureSchemaStateServiceProvider"
+      ]
+    }
+  }
+}
