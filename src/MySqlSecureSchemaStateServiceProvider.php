@@ -3,12 +3,15 @@
 namespace Milad\MySqlSecureSchemaState;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Database\Schema\MySqlSchemaState;
+use Illuminate\Database\Connection;
 
 class MySqlSecureSchemaStateServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->app->bind(MySqlSchemaState::class, MySqlSecureSchemaState::class);
+        // Register custom MySQL connection resolver
+        Connection::resolverFor('mysql', function ($connection, $database, $prefix, $config) {
+            return new MySqlSecureConnection($connection, $database, $prefix, $config);
+        });
     }
 }
